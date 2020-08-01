@@ -7,10 +7,10 @@ before_install:
 script:
     - docker run -e CI=true nithin/test-react-nithin npm run test -- --coverage
 after_success:
-    - docker build -t nithin/multi-client ./client
-    - docker build -t nithin/multi-nginx ./nginx
-    - docker build -t nithin/multi-server ./server
-    - docker build -t nithin/multi-worker ./worker
+    - docker build -t smuppidi0410/multi-client ./client
+    - docker build -t smuppidi0410/multi-nginx ./nginx
+    - docker build -t smuppidi0410/multi-server ./server
+    - docker build -t smuppidi0410/multi-worker ./worker
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
     # Take those images and push them to docker hub
