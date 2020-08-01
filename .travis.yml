@@ -14,7 +14,7 @@ after_success:
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
     # Take those images and push them to docker hub
-    - docker push nithin/multi-client
-    - docker push nithin/multi-nginx
-    - docker push nithin/multi-server
-    - docker push nithin/multi-worker
+    - docker push smuppidi0410/multi-client
+    - docker push smuppidi0410/multi-nginx
+    - docker push smuppidi0410/multi-server
+    - docker push smuppidi0410/multi-worker
