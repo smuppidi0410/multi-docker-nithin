@@ -18,3 +18,17 @@ after_success:
     - docker push smuppidi0410/multi-nginx
     - docker push smuppidi0410/multi-server
     - docker push smuppidi0410/multi-worker
+    deploy:
+        skip_cleanup: true
+        edge: true
+        provider: elasticbeanstalk
+        region: "us-east-1"
+        app: "multi-docker"
+        env: "MultiDocker-env"
+        bucket_name: "elasticbeanstalk-us-east-1-615254007828"
+        bucket_path: "multi-docker"
+        on:
+          branch: master
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
+      
